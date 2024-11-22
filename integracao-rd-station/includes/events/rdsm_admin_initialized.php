@@ -3,6 +3,8 @@
 require_once(RDSM_SRC_DIR . '/events/rdsm_events_interface.php');
 
 class RDSMAdminInitialized implements RDSMEventsInterface {
+  private $new_woocommerce_options;
+
   function __construct() {
     $this->new_woocommerce_options = get_option('rdsm_woocommerce_settings');
   }

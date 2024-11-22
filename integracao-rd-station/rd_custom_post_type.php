@@ -1,6 +1,11 @@
 <?php
 
 class RDCustomPostType {
+  private $slug;
+  public $acronym;
+  public $name;
+  public $plugin_path;
+
   public function __construct($slug) {
     $this->slug = $slug;
     require_once("metaboxes/$this->slug.php");

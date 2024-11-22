@@ -3,8 +3,8 @@ Contributors: Filipe Mateus do Nascimento
 Donate link: -
 Tags: integrations, forms, contact form, rd station, resultados digitais
 Requires at least: 4.7
-Tested up to: 6.6.1
-Stable tag: 5.4.0
+Tested up to: 6.7.1
+Stable tag: 5.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,8 @@ Compatible with the following forms:
 * Contact Form 7
 * Gravity Forms
 * WooCommerce (only available for the checkout form)
-* Custom Scripts: you can also add custom integrations scripts in every single page or post you want.
+
+**Note:** The custom scripts feature, which allowed adding integration scripts to pages or posts, was removed in version **5.5.0** to enhance security and prevent potential **XSS attacks**.
 
 Features:
 
@@ -39,6 +40,12 @@ More info about the plugin setup: [https://github.com/ResultadosDigitais/rdstati
 More info about the version 5.0.0: [https://ajuda.rdstation.com.br/hc/pt-br/articles/360054981272](https://ajuda.rdstation.com.br/hc/pt-br/articles/360054981272)
 
 == Changelog ==
+
+= 5.5.0 =
+* Removed feature that allowed adding custom scripts to pages and posts to improve security and prevent potential XSS attacks
+* Fixed a fatal error caused by a typo in the function name esc_html_ee(), replacing it with the correct esc_html_e()
+* Fixed deprecation warnings for dynamic properties in PHP 8.2+. Improved compatibility with newer PHP versions
+* Tested with WordPress version 6.7.1
 
 = 5.4.0 =
 * Fixing security vulnerability

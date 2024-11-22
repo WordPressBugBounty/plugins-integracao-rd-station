@@ -1,8 +1,11 @@
 <?php
 
 class RD_Metabox {
+	public $plugin_prefix;
+
 	public function __construct($plugin_prefix){
 		$this->plugin_prefix = $plugin_prefix;
+
 		add_action( 'add_meta_boxes', array($this, 'rd_create_meta_boxes' ) );
 		add_action( 'save_post', array($this, 'rd_save_meta_boxes' ) );
 	}

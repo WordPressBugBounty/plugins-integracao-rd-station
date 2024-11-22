@@ -8,7 +8,11 @@ class RDSMGravityFormsIntegration {
 
   public $form_data;
 
+  private $resource;
   private $submitted_form_id;
+
+  private $api_client;
+  private $integrations;
 
   public function __construct($resource, $api_client) {
     $this->resource = $resource;

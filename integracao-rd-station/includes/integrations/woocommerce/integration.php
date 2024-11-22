@@ -6,6 +6,9 @@ class RDSMWoocommerceIntegration {
   const CHECKOUT_TRIGGER = 'woocommerce_checkout_order_processed';
 
   public $conversion_data;
+  private $resource;
+  private $api_client;
+  private $integrations;
 
   public function __construct($resource, $api_client) {
     $this->resource = $resource;

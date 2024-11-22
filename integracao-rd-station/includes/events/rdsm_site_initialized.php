@@ -3,6 +3,8 @@
 require_once(RDSM_SRC_DIR . '/events/rdsm_events_interface.php');
 
 class RDSMSiteInitialized implements RDSMEventsInterface {
+  private $general_settings;
+
   function __construct() {
     $this->general_settings = get_option('rdsm_general_settings');
   }
