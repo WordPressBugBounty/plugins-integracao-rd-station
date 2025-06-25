@@ -3,8 +3,8 @@ Contributors: Filipe Mateus do Nascimento
 Donate link: -
 Tags: integrations, forms, contact form, rd station, resultados digitais
 Requires at least: 4.7
-Tested up to: 6.7.1
-Stable tag: 5.5.0
+Tested up to: 6.8.1
+Stable tag: 5.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,9 @@ More info about the plugin setup: [https://github.com/ResultadosDigitais/rdstati
 More info about the version 5.0.0: [https://ajuda.rdstation.com.br/hc/pt-br/articles/360054981272](https://ajuda.rdstation.com.br/hc/pt-br/articles/360054981272)
 
 == Changelog ==
+
+= 5.5.1 =
+* Testing plugin with 6.8.1 Wordpress version
 
 = 5.5.0 =
 * Removed feature that allowed adding custom scripts to pages and posts to improve security and prevent potential XSS attacks
