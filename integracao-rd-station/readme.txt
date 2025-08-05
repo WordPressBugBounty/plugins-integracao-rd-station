@@ -4,7 +4,7 @@ Donate link: -
 Tags: integrations, forms, contact form, rd station, resultados digitais
 Requires at least: 4.7
 Tested up to: 6.8.1
-Stable tag: 5.6.0
+Stable tag: 5.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,15 +41,7 @@ More info about the version 5.0.0: [https://ajuda.rdstation.com.br/hc/pt-br/arti
 
 == Changelog ==
 
-= 5.6.0  =
-*Standardized log storage: Logs are now saved in the writable wp-content/uploads directory.
-*Dedicated log directory: Added a specific folder for better log organization.
-*Improved log structure: Reformatted for clearer and more intuitive visualization.
-*Increased log entries per file: Configurable via environment variables.
-*Log filtering: Added option to filter logs by errors or successes.
-*Visual improvements: Enhanced formatting for easier reading and interpretation.
-
-= 5.5.1  =
+= 5.5.1 =
 * Testing plugin with 6.8.1 Wordpress version
 
 = 5.5.0 =

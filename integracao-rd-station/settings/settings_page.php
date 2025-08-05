@@ -88,19 +88,13 @@ function rdstation_settings_page_callback() {
 }
 
 function rdsm_integrations_log_html() {
-  $options = get_option( 'rdsm_integrations_log_settings' ); ?>
-  <select id="rdsm_log_filter">
-    <option value="all">Todos</option>
-    <option value="errors">Somente erros</option>
-    <option value="success">Somente sucesso</option>
-  </select>
-
-  <?php if (RDSMLogFileHelper::has_error()) { ?>
-    <h3 class="alert-box"><?php esc_html_e('⚠️ There are conversions that returned an error, check the log for more information!', 'integracao-rd-station') ?></h3>
+  $options = get_option( 'rdsm_integrations_log_settings' ); 
+  if (RDSMLogFileHelper::has_error()) { ?>
+    <h3 class="alert-box"><?php esc_html_e('There are conversions that returned an error, check the log for more information', 'integracao-rd-station') ?></h3>
   <?php } ?>
-  <a id="button-log" class="button" href="#" onclick="copyLogToClipboard()"><?php esc_html_e("Encrypt and Copy", 'integracao-rd-station')?></a>
-  <a id="button-log" class="button" href="#" onclick="if(confirm('After this action, the data could not be recovered. Are you sure you want to clear the log?')) clearLog();"><?php esc_html_e("Clear Log", 'integracao-rd-station')?></a>
-  <div id="rdsm_log_screen" class="rdsm-log-output"></div>
+  <a class="button" href="#" onclick="copyLogToClipboard()"><?php esc_html_e("Encrypt and Copy", 'integracao-rd-station')?></a>
+  <a class="button" href="#" onclick="if(confirm('After this action, the data could not be recovered. Are you sure you want to clear the log?')) clearLog();"><?php esc_html_e("Clear Log", 'integracao-rd-station')?></a>
+  <textarea readonly id="rdsm_log_screen" rows="50"></textarea>
   <?php
 }
 
@@ -124,7 +118,7 @@ function rdsm_woocommerce_field_mapping_html() {
 
   <div class="rdsm-connected-box hidden">
     <?php if (RDSMLogFileHelper::has_error()) { ?>
-      <h3 class="alert-box"><?php esc_html_e('⚠️ There are conversions that returned an error, check the log for more information!', 'integracao-rd-station') ?></h3>
+      <h3 class="alert-box"><?php esc_html_e('There are conversions that returned an error, check the log for more information', 'integracao-rd-station') ?></h3>
     <?php } ?>
     <h4 id="map_fields_title">
       <?php esc_html_e('Map the fields below according to their names in RD Station.', 'integracao-rd-station') ?>
