@@ -16,5 +16,23 @@ define('RDSM_TRACKING_CODE', '/marketing/tracking_code');
 define('RDSM_CONTACTS_FIELDS', '/platform/contacts/fields');
 
 // File
-define('RDSM_LOG_FILE_PATH', plugin_dir_path( __FILE__ ) . '/log');
-define('RDSM_LOG_FILE_LIMIT', 1000);
+// Define caminho do log com base na permissibilidade
+if (!defined('RDSM_LOG_FILE_PATH')) {
+    $default_path = WP_CONTENT_DIR . '/uploads/rdsm_logs';
+
+    // Testa se pode escrever
+    if (!is_dir($default_path)) {
+        @wp_mkdir_p($default_path);
+    }
+
+    // Verifica se o caminho padrão é gravável, senão usa /tmp
+    if (!is_writable($default_path)) {
+        define('RDSM_LOG_FILE_PATH', '/tmp/rdsm_logs');
+        if (!is_dir(RDSM_LOG_FILE_PATH)) {
+            @mkdir(RDSM_LOG_FILE_PATH, 0777, true);
+        }
+    } else {
+        define('RDSM_LOG_FILE_PATH', $default_path);
+    }
+}
+define('RDSM_LOG_FILE_LIMIT', 20000);
